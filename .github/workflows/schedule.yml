@@ -1,0 +1,9 @@
+on:
+  schedule:
+    - cron: "57 11 * * *"
+jobs:
+  test_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo "Echo test"
