@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "${{ inputs.test-inputs }}"
+          echo "$TEST"
+          echo "${{ inputs.test_inputs }}"
+        env:
+          TEST: ${{ inputs.test_inputs }}
