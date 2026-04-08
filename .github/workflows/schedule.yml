@@ -1,6 +1,7 @@
 on:
   schedule:
-    - cron: "05 10 * * *"
+    - cron: "15 10 * * *"
+    - cron: "15 12 * * *"
 jobs:
   test_run:
     runs-on: ubuntu-latest
