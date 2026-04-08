@@ -1,0 +1,9 @@
+on:
+  repository_dispatch:
+    types: [test_inputs]
+jobs:
+  test-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "TEST"
