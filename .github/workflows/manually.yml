@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+    inputs:
+      test_inputs:
+        description: 'Test inputs'
+        default: 'Test asd'
+jobs:
+  test-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ inputs.test-inputs }}"
