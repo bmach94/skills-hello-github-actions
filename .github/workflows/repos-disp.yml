@@ -1,6 +1,8 @@
 on:
   repository_dispatch:
     types: [test_inputs]
+permissions:
+  actions: write
 jobs:
   test-inputs:
     runs-on: ubuntu-latest
