@@ -1,0 +1,6 @@
+on:
+  create
+
+jobs:
+  call-deploy:
+    uses: ./.github/workflows/reusable.yml  # Lokalny
