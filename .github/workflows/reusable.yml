@@ -21,7 +21,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         id: ble
-        run: echo "Hello, world!." >> $GITHUB_OUTPUT
+        run: |
+          echo "::notice:: Hello, world!"
+          echo "message=test" >> $GITHUB_OUTPUT
 
   useoutput:
     runs-on: ubuntu-latest
