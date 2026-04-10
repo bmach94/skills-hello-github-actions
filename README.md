@@ -1,3 +1,4 @@
+[![.github/workflows/manually.yml](https://github.com/bmach94/skills-hello-github-actions/actions/workflows/manually.yml/badge.svg)](https://github.com/bmach94/skills-hello-github-actions/actions/workflows/manually.yml)
 
 <div align="center">
 
