@@ -4,6 +4,17 @@ on:
       test_inputs:
         description: 'Test inputs'
         default: 'Test asd'
+      test_bool:
+        description: boolean options:
+        type: boolean
+        default: True
+      test_choice:
+        description: Choice test
+        type: choice
+        options: [dev,test]
+      test_number:
+        type: number
+        default: 1
 jobs:
   test-inputs:
     runs-on: ubuntu-latest
@@ -11,5 +22,8 @@ jobs:
       - run: |
           echo "$TEST"
           echo "${{ inputs.test_inputs }}"
+          echo "${{ inputs.test_bool }}"
+          echo "${{ inputs.test_choice }}"
+          echo "${{ inputs.test_number }}"
         env:
           TEST: ${{ inputs.test_inputs }}
