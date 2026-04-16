@@ -35,3 +35,7 @@ jobs:
       uses: ./.github/workflows/reusable.yml  # Lokalny
       with:
         test-input: ${{ inputs.test_inputs }}
+  test-var:
+      needs: test-reusable
+      steps:
+        - run: echo "${{ needs.test-reusable.outputs.test-var }}"
