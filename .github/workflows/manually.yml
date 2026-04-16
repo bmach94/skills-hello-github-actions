@@ -32,9 +32,6 @@ jobs:
         run: echo "${{ inputs.test_choice }}"
 
   test-reusable:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: ./.github/workflows/reusable.yml  # Lokalny
-          with:
-            test-input: ${{ inputs.test_inputs }}
-        
+      uses: ./.github/workflows/reusable.yml  # Lokalny
+      with:
+        test-input: ${{ inputs.test_inputs }}
