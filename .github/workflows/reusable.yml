@@ -6,6 +6,10 @@ name: Reusable workflow
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   workflow_call: 
+    inputs:
+        test-input:
+          type: string
+          default: "ble"
     outputs:
         test-var:         # ← DODAJ TO!
           value: ${{ jobs.build.outputs.test-var }}
@@ -25,7 +29,7 @@ jobs:
       - name: Run a one-line script
         id: ble
         run: |
-          echo "::notice:: Hello, world!"     # Annotation format
+          echo "::notice:: Hello, ${{ inputs.test-input }}!"     # Annotation format
           echo "message=Test" >> $GITHUB_OUTPUT
 
   useoutput:
