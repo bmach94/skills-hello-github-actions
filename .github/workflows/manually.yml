@@ -34,6 +34,7 @@ jobs:
   test-reusable:
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v4  # REQUIRED first []
         - uses: ./.github/workflows/reusable.yml  # Lokalny
           with:
             test-input: ${{ inputs.test_inputs }}
