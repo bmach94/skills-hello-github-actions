@@ -24,6 +24,10 @@ jobs:
           echo "${{ inputs.test_inputs }}"
           echo "${{ inputs.test_bool }}"
           echo "${{ inputs.test_choice }}"
-          echo "${{ inputs.test_number }}"
+          echo "${{ inputs.test_number }}"          
         env:
           TEST: ${{ inputs.test_inputs }}
+
+      - if: inputs.test_bool
+        run: echo "${{ inputs.test_choice }}"
+        
