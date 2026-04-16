@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       test-var: ${{ steps.ble.outputs.message }}  # message z GITHUB_OUTPUT   
-      pass: ${{ steps.test-var.outputs }}
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -48,4 +47,4 @@ jobs:
         run: echo "print var $MY_VAR"
       - continue-on-error: true
         name: test is var ok
-        run: echo "you change vm and var is invisible. but this work ${{ needs.build.outputs.pass }}"
+        run: echo "you change vm and var is invisible. but this work"
