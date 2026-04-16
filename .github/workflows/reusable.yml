@@ -13,8 +13,6 @@ on:
     outputs:
         test-var:         # ← DODAJ TO!
           value: ${{ jobs.build.outputs.test-var }}
-        pass-var:
-          value: ${{ jobs.build.outputs.pass }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
