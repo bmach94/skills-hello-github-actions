@@ -5,7 +5,7 @@ on:
         description: 'Test inputs'
         default: 'Test asd'
       test_bool:
-        description: boolean options:
+        description: boolean options
         type: boolean
         default: True
       test_choice:
