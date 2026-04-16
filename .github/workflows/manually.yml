@@ -30,4 +30,11 @@ jobs:
 
       - if: inputs.test_bool
         run: echo "${{ inputs.test_choice }}"
+
+  test-reusable:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: ./reusable.yml
+          with:
+            test-input: ${{ inputs.test_inputs }}
         
