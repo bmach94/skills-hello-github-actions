@@ -16,6 +16,10 @@ on:
         type: number
         default: 1
 jobs:
+
+  test-action:
+    uses: ./.github/workflows/action.yml
+    
   test-inputs:
     runs-on: ubuntu-latest
     steps:
