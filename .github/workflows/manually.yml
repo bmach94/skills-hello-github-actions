@@ -22,11 +22,7 @@ jobs:
     steps:
     # Checkout zawsze pierwszy!
     - uses: actions/checkout@v4
-    
-  test-action:
-    id: my-action
-    steps:
-      - uses: ./.github/actions/action.yml
+    - uses: ./.github/actions/action.yml
     
   test-inputs:
     runs-on: ubuntu-latest
