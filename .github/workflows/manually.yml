@@ -1,5 +1,5 @@
 on:
-  workflow_dispatch:
+  workflow_dispatch:      
     inputs:
       test_inputs:
         description: 'Test inputs'
@@ -15,14 +15,18 @@ on:
       test_number:
         type: number
         default: 1
-jobs:
 
+jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        os: [ubuntu-latest. windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     # Checkout zawsze pierwszy!
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/actionble
+    #- uses: ./.github/actions/actionble
     
   test-inputs:
     runs-on: ubuntu-latest
