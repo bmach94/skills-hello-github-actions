@@ -18,7 +18,7 @@ on:
 jobs:
 
   test-action:
-    uses: ./.github/workflow/action@main
+    uses: ./.github/workflows/action.yml
     
   test-inputs:
     runs-on: ubuntu-latest
