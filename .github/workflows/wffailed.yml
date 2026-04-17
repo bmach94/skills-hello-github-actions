@@ -26,4 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test job"
-      - run: sleep 1800
+      - run: sleep 10
