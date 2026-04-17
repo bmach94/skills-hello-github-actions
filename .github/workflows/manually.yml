@@ -22,7 +22,7 @@ jobs:
     steps:
     # Checkout zawsze pierwszy!
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/action@main
+    - uses: ./.github/actions/action
     
   test-inputs:
     runs-on: ubuntu-latest
