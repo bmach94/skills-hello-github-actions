@@ -1,0 +1,21 @@
+name: 'Cleanup Action'
+runs:
+  using: 'composite'
+  steps:
+  - name: pre
+    run: |
+      echo "temp_dir-/tmp/myapp-${GITHUB_RUN_ID}" >> $GITHUB_STATE
+      echo "files_count=0" >> $GITHUB_STATE
+    shell: bash
+
+  - name: main
+    run: |
+      mkdir -p "${{ env.STATE_temp_dir }}"
+      echo "build-${GITHUB_RUN_ID}.zip" > "${{ env.STATE_temp_dir }}/artifacts.txt"
+    shell: bash
+
+  - name: post
+    run: |
+      echo "Usuwam ${{ env.STATE_files_count }} plików z ${STATE_temp_dir }}"
+      rm -rf "${{ env.STATE_temp_dir }}"
+    shell: bash

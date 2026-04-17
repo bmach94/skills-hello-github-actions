@@ -17,8 +17,16 @@ on:
         default: 1
 jobs:
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout zawsze pierwszy!
+    - uses: actions/checkout@v4
+    
   test-action:
-    uses: ./.github/workflows/action.yml
+    id: my-action
+    steps:
+      - uses: ./.github/actions/action.yml
     
   test-inputs:
     runs-on: ubuntu-latest
