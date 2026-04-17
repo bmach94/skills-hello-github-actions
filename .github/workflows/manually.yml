@@ -30,7 +30,7 @@ jobs:
     
   test-inputs:
     runs-on: ubuntu-latest
-    steps:
+    steps: &anchortest
       - run: |
           echo "$TEST"
           echo "${{ inputs.test_inputs }}"
@@ -42,6 +42,8 @@ jobs:
 
       - if: inputs.test_bool
         run: echo "${{ inputs.test_choice }}"
+
+      - *anchortest
 
   test-reusable:
       uses: ./.github/workflows/reusable.yml  # Lokalny
