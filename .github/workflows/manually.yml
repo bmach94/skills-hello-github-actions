@@ -22,6 +22,8 @@ jobs:
       max-parallel: 2
       matrix:
         os: [ubuntu-latest. windows-latest]
+        exclude:
+          - os: windows-latest
     runs-on: ${{ matrix.os }}
     steps:
     # Checkout zawsze pierwszy!
@@ -30,8 +32,9 @@ jobs:
     
   test-inputs:
     runs-on: ubuntu-latest
-    steps: &anchortest
-      - run: |
+    steps: 
+      - id: anchortest
+        run:  |
           echo "$TEST"
           echo "${{ inputs.test_inputs }}"
           echo "${{ inputs.test_bool }}"
