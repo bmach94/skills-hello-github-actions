@@ -18,7 +18,7 @@ on:
 jobs:
 
   test-action:
-    uses: ./.github/action/action
+    uses: ./.github/action/action@main
     
   test-inputs:
     runs-on: ubuntu-latest
